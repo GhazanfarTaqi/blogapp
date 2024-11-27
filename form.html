@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloging App</title>
+    <link rel="stylesheet" href="CSS/form.css">
+</head>
+<body>
+    <section class="main">
+        <h1>Unleash Your Productivity Here</h1>
+        <form action="/submit" method="post" class="blog-form">
+            
+            <label for="title">Title:</label>
+            <textarea name="title" id="title" cols="100" rows="1"></textarea>
+    
+            <label for="discription">Discription:</label>
+            <textarea name="discription" id="discription" cols="100" rows="3"></textarea>
+    
+            <label for="blogarea">Write your blog here:</label>
+            <textarea name="blogarea" id="blogarea" cols="100" rows="30"></textarea>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <button class="btn" id="allblog-btn">ALL Post</button>
+    </section>
+    <script>
+            const Allblogbtn = document.getElementById("allblog-btn");
+            Allblogbtn.addEventListener("click",()=>{
+            window.location.href='/allblogs'
+            })
+    </script>
+
+</body>
+</html>

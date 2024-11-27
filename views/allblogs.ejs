@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Blogs</title>
+    <link rel="stylesheet" href="CSS/allblogs.css">
+</head>
+<body>
+    <form action="/seefullblog" method="post">
+    <section class="hero-section">
+        <h1>All Blogs</h1>
+        <% if (dataArray.length != 0){ %>
+        <div class="cards">
+                <% dataArray.forEach(element => { %>
+                    <div class="card">
+                        <h5><%= element.title %></h5>
+                        <p class="card-discription"><%= element.discription %></p>
+                        <button type="submit" class="hover-effect" value="<%= element.id %>" name="button">See Full blog</button>
+                    </div>
+                <%  }); %>
+            
+        </div>
+        <% }else{ %>
+            <h1>There are no blogs</h1>
+            <% } %>
+        </section>
+    </form>
+    <form action="/writeblog" method="get">
+        <button type="submit" class="hover-effect" id="writeblog-btn" >Write a blog</button>
+    </form>
+    <!-- <script>
+        const writeblogbtn = document.getElementById("writeblog-btn");
+
+        writeblogbtn.addEventListener("click",()=>{
+        window.location.href='/writeblog'
+})
+
+</script> -->
+</body>
+</html>
